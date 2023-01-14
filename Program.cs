@@ -6,7 +6,7 @@ namespace AddressBookSql
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)\n5.Retrieve Data(using City or State)\n6.Size of Address Book by State or City\n7.Sort Alphabetically");
+            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)\n5.Retrieve Data(using City or State)\n6.Size of Address Book by State or City\n7.Sort Alphabetically\n8.Alter table");
             int op = Convert.ToInt32(Console.ReadLine());
             while (true)
             {
@@ -37,7 +37,7 @@ namespace AddressBookSql
                     case 3:
                         Console.WriteLine("Enter the first name");
                         string Name = Console.ReadLine();
-                        Console.WriteLine("Enter Type of Value to Update(Using Name)\n1.Address\n2.City\n3.State\n4.Zip\n5.PhoneNumber\n6.Email");
+                        Console.WriteLine("Enter Type of Value to Update(Using Name)\n1.Address\n2.City\n3.State\n4.Zip\n5.PhoneNumber\n6.Email\n7.Type");
                         int op1 = Convert.ToInt32(Console.ReadLine());
                         while (true)
                         {
@@ -73,6 +73,29 @@ namespace AddressBookSql
                                     string UpEmail = Console.ReadLine();
                                     EditContactClass.EditContact("Email", UpEmail, Name);
                                     break;
+                                case 7:
+                                    Console.WriteLine("Enter the Type\n1.Family\n2.Friend\n3.Profession");
+                                    int op2 = Convert.ToInt32(Console.ReadLine());
+                                    string UpType;
+                                    while (true)
+                                    {
+                                        switch (op2)
+                                        {
+                                            case 1:
+                                                UpType = "Family";
+                                                EditContactClass.EditContact("Email", UpType, Name);
+                                                break;
+                                            case 2:
+                                                UpType = "Friend";
+                                                EditContactClass.EditContact("Email", UpType, Name);                                                break;
+                                            case 3:
+                                                UpType = "Profession";
+                                                EditContactClass.EditContact("Email", UpType, Name);
+                                                break;
+                                        }
+                                        break;
+                                    }
+                                    break;
                             }
                             break;
                         }
@@ -100,6 +123,13 @@ namespace AddressBookSql
                         Console.WriteLine("Enter Column Name");
                         string Column = Console.ReadLine();
                         SortAlphabeticallyClass.sort(Column);
+                        break;
+                    case 8:
+                        Console.WriteLine("Enter Column Name");
+                        string Column1 = Console.ReadLine();
+                        Console.WriteLine("Enter Column Datatype");
+                        string Datatye = Console.ReadLine();
+                        AlterClass.Alter(Column1, Datatye);
                         break;
                 }
             break;
