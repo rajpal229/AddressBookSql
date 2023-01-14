@@ -6,7 +6,7 @@ namespace AddressBookSql
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)\n5.Retrieve Data(using City or State)\n6.Size of Address Book by State or City");
+            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)\n5.Retrieve Data(using City or State)\n6.Size of Address Book by State or City\n7.Sort Alphabetically");
             int op = Convert.ToInt32(Console.ReadLine());
             while (true)
             {
@@ -93,8 +93,13 @@ namespace AddressBookSql
                         Console.WriteLine("Enter Column Name");
                         string RetrieveColumn1 = Console.ReadLine();
                         Console.WriteLine("Enter value in Column");
-                        string RetrieveValue2 = Console.ReadLine();
-                        SizeOfAddressBookClass.Size(RetrieveColumn1, RetrieveValue2);
+                        string RetrieveValue1 = Console.ReadLine();
+                        SizeOfAddressBookClass.Size(RetrieveColumn1, RetrieveValue1);
+                        break;
+                    case 7:
+                        Console.WriteLine("Enter Column Name");
+                        string Column = Console.ReadLine();
+                        SortAlphabeticallyClass.sort(Column);
                         break;
                 }
             break;
