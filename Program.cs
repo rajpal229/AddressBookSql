@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)");
+            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)\n5.Retrieve Data(using City or State)");
             int op = Convert.ToInt32(Console.ReadLine());
             while (true)
             {
@@ -79,6 +79,13 @@
                         Console.WriteLine("Enter Name");
                         string DeleteName = Console.ReadLine();
                         DeleteDataClass.deleteData(DeleteName);
+                        break;
+                    case 5:
+                        Console.WriteLine("Enter Column for Data to be Retrieved");
+                        string RetrieveColumn = Console.ReadLine();
+                        Console.WriteLine("Enter value in Column");
+                        string RetrieveValue = Console.ReadLine();
+                        RetrieveDataClass.RetrieveData(RetrieveColumn, RetrieveValue);
                         break;
                 }
             break;
