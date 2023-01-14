@@ -1,10 +1,12 @@
-﻿namespace AddressBookSql
+﻿using System.Drawing;
+
+namespace AddressBookSql
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)\n5.Retrieve Data(using City or State)");
+            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)\n5.Retrieve Data(using City or State)\n6.Size of Address Book by State or City");
             int op = Convert.ToInt32(Console.ReadLine());
             while (true)
             {
@@ -86,6 +88,13 @@
                         Console.WriteLine("Enter value in Column");
                         string RetrieveValue = Console.ReadLine();
                         RetrieveDataClass.RetrieveData(RetrieveColumn, RetrieveValue);
+                        break;
+                    case 6:
+                        Console.WriteLine("Enter Column Name");
+                        string RetrieveColumn1 = Console.ReadLine();
+                        Console.WriteLine("Enter value in Column");
+                        string RetrieveValue2 = Console.ReadLine();
+                        SizeOfAddressBookClass.Size(RetrieveColumn1, RetrieveValue2);
                         break;
                 }
             break;
