@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table");
+            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)");
             int op = Convert.ToInt32(Console.ReadLine());
             while (true)
             {
@@ -32,8 +32,51 @@
                         string Email = Console.ReadLine();
                         InsertDataClass.InsertData(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email);
                         break;
+                    case 3:
+                        Console.WriteLine("Enter the first name");
+                        string Name = Console.ReadLine();
+                        Console.WriteLine("Enter Type of Value to Update(Using Name)\n1.Address\n2.City\n3.State\n4.Zip\n5.PhoneNumber\n6.Email");
+                        int op1 = Convert.ToInt32(Console.ReadLine());
+                        while (true)
+                        {
+                            switch (op1)
+                            {
+                                case 1:
+                                    Console.WriteLine("Enter the Address");
+                                    string UpAddress = Console.ReadLine();
+                                    EditContactClass.EditContact("Address", UpAddress, Name);
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Enter the City");
+                                    string UpCity = Console.ReadLine();
+                                    EditContactClass.EditContact("City", UpCity, Name);
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Enter the State");
+                                    string UpState = Console.ReadLine();
+                                    EditContactClass.EditContact("State", UpState, Name);
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Enter the Zip");
+                                    string UpZip = Console.ReadLine();
+                                    EditContactClass.EditContact("Zip", UpZip, Name);
+                                    break;
+                                case 5:
+                                    Console.WriteLine("Enter the PhoneNumber");
+                                    string UpPhone = Console.ReadLine();
+                                    EditContactClass.EditContact("PhoneNumber", UpPhone, Name);
+                                    break;
+                                case 6:
+                                    Console.WriteLine("Enter the Email");
+                                    string UpEmail = Console.ReadLine();
+                                    EditContactClass.EditContact("Email", UpEmail, Name);
+                                    break;
+                            }
+                            break;
+                        }
+                        break;
                 }
-                break;
+            break;
             }
         }
     }
