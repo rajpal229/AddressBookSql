@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)");
+            Console.WriteLine("Enter Option\n1.Create Table\n2.Insert Data Into Table\n3.Edit Contact (using name)\n4.Delete Data(using Name)");
             int op = Convert.ToInt32(Console.ReadLine());
             while (true)
             {
@@ -74,6 +74,11 @@
                             }
                             break;
                         }
+                        break;
+                    case 4:
+                        Console.WriteLine("Enter Name");
+                        string DeleteName = Console.ReadLine();
+                        DeleteDataClass.deleteData(DeleteName);
                         break;
                 }
             break;

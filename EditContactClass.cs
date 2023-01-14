@@ -28,7 +28,7 @@ namespace AddressBookSql
                     cmd.ExecuteNonQuery();
                 }
                 
-                Console.WriteLine("Data Inserted");
+                Console.WriteLine("Data Edited");
             }
             catch (Exception e)
             {
